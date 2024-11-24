@@ -1,0 +1,14 @@
+{
+  "name": "desafio-02_alurageek_final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch ./database/db.json"
+  },
+  "author": "frassing",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

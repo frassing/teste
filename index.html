@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AluraGeek</title>
+	<link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+<body>
+	<header class="header-container">
+		<img class="logo__img" src="./assets/images/hearts-logo.svg" alt="três desenhos de corações vermelhos">
+		<h2 class="logo__title">AluraGeek</h2>
+	</header>
+	<main class="main-container">
+		<section class="products__section">
+			<h2 class="main__section--title">Meus produtos:</h2>
+			<section class="products__search">
+				<div class="search__bar">
+					<input type="text" name="search" id="searchProduct" placeholder="Nome do produto" data-search-input>
+					<span class="search__alert-msg"></span>
+				</div>
+				<div class="search__buttons">
+					<button type="button" class="search_btn" data-search-button>
+						 <img src="./assets/images/search-icon.png" alt="Pesquisar">
+					</button>
+					<button type="button" class="search_btn" data-clear-search-button>
+						 <img src="./assets/images/product-list-icon.png" alt="Todos os produtos" title="Todos os produtos">
+					</button>
+				</div>
+			</section>
+			<section class="products__container" data-product-list>
+				<!-- Products loaded dinamically with js -->
+			</section>
+		</section>
+		<section class="form__section">
+			<h2 class="main__section--title">Adicionar produto:</h2>
+			<form class="form__container">
+				<input type="text" name="name" id="prod_name" placeholder="Nome do produto" required data-name-input>
+				<input type="text" name="price" id="prod_price" placeholder="Valor do produto" required data-price-input>
+				<input type="text" name="image" id="prod_img" placeholder="Url da imagem" required data-image-input>
+
+				<div class="form__buttons">
+					<input type="submit" value="Salvar" data-save-btn>
+					<input type="reset" value="Limpar">
+				</div>
+			</form>
+		</section>
+	</main>
+	<footer class="footer-container">
+		<section class="footer__author">
+			<div class="footer__logo">
+				<img class="logo__img" src="./assets/images/hearts-logo.svg" alt="três desenhos de corações vermelhos">
+				<h2 class="logo__title">AluraGeek</h2>
+			</div>
+			<div class="footer__author--content">
+				<p>Desenvolvido por Raquel Roessing</p>
+				<p class="footer__content--muted">One T7 Alura - 2024</p>
+				<div class="footer__author--socials">
+					<ul>
+						<li><a href="https://github.com/frassing" target="_blank">GitHub</a></li>
+						<li><a href="https://www.linkedin.com/in/raquel-frassing/" target="_blank">LinkedIn</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="footer__credits">
+			<ul class="footer__credits--links">
+				<li>
+					Icons by <a href="https://www.flaticon.com/br/autores/design-circle" title="Design Circle" target="_blank">Design Circle</a> and <a href="https://www.flaticon.com/br/autores/bharat-icons" title="Bharat Icons" target="_blank">Bharat Icons</a> from <a href="https://www.flaticon.com/br/" title="Flaticon" target="_blank">Flaticon</a>
+				</li>
+				<li>
+					Foto de <a href="https://unsplash.com/pt-br/@itsliamtucker?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Liam Tucker</a> na <a href="https://unsplash.com/pt-br/fotografias/estatueta-de-star-wars-stormtropper-na-mesa-cVMaxt672ss?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
+				</li>
+				<li>
+					Foto de <a href="https://unsplash.com/pt-br/@ravipalwe?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Ravi Palwe</a> na <a href="https://unsplash.com/pt-br/fotografias/lego-mini-figura-que-monta-carro-de-brinquedo-azul-e-vermelho-CHAqx7kpnLQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
+				</li>
+				<li>
+					Foto de <a href="https://unsplash.com/pt-br/@parastoojk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">parastoo jk</a> na <a href="https://unsplash.com/pt-br/fotografias/branco-e-verde-pop-brinquedo-da-cabeca-da-bolha-no-livro-marrom-GD6us4XUa18?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
+				</li>
+				<li>
+					Foto de <a href="https://unsplash.com/pt-br/@saulomohana?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Saulo Mohana</a> na <a href="https://unsplash.com/pt-br/fotografias/TQIktY5jE6E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
+				</li>
+				<li>
+					Foto de <a href="https://unsplash.com/pt-br/@mike_meyers?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Mike Meyers</a> na <a href="https://unsplash.com/pt-br/fotografias/branco-e-preto-nintendo-game-boy-color-na-superficie-amarela-v8XaVfyo41Q?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank">Unsplash</a>
+				</li>
+			</ul>
+		</section>
+	</footer>
+	<script src="./assets/js/controllers/main.js" type="module"></script>
+	<script src="./assets/js/controllers/createProduct.js" type="module"></script>
+	<script src="./assets/js/controllers/searchProduct.js" type="module"></script>
+</body>
+</html>

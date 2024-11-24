@@ -1,0 +1,358 @@
+/* Fonts: IBM Plex Mono and Press Start 2P */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500;600;700&family=Press+Start+2P&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: #750E21;
+	--secondary-color: #191919;
+	--title-font: "Press Start 2P", serif;
+	--text-font: "IBM Plex Mono", serif;
+	--base-color: #FFF;
+	--muted-color: #e5e5e5;
+	--success-color: #30dd81;
+	--failure-color: #e24034;
+}
+
+body {
+	background-color: var(--base-color);
+}
+
+.header-container,
+.main-container,
+.products__search, 
+.search__bar,
+.search__buttons,
+.product__card,
+.form__container,
+.form__buttons,
+.footer-container,
+.footer__logo,
+.footer__credits {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo__img {
+	width: 30%;
+	max-width: 8.625rem;
+}
+
+.logo__title {
+	font-family: var(--title-font);
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.header-container,
+.footer-container {
+	background-color: var(--primary-color);
+}
+
+.header-container {
+	height: 6rem;
+	color: var(--muted-color);
+}
+
+/* ========================= MAIN ========================= */
+.main-container {
+	align-items: start;
+	padding: 1.5em 1.875em 1.875em;
+	gap: 3em;
+}
+
+.main__section--title {
+	font-family: var(--title-font);
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	padding: 2.5em 0;
+	text-align: center;
+}
+
+.products__section, 
+.form__section {
+	padding: .5em;
+	justify-items: center;
+}
+
+.main__empty_list--message {
+	font-family: var(--text-font);
+	text-align: center;
+}
+
+/* ========================= PRODUCTS ========================= */
+.products__section {
+	max-width: 65%;
+}
+
+/* SEARCH BAR */
+.products__search {
+	margin: 0 0 1em;
+	width: 100%;
+	height: 4rem;
+	gap: .25em;
+}
+
+.search__bar {
+	flex-direction: column;
+	font-family: var(--text-font);
+	width: 60%;
+	padding: .25em;
+	gap: .25em;
+}
+
+[data-search-input] {
+	font-family: var(--text-font);
+	font-weight: 600;
+	color: var(--secondary-color);
+	border: .25em solid var(--primary-color);
+	border-radius: 1em;
+	padding: .375em .625em;
+	align-self: stretch;
+}
+
+[data-search-input]::placeholder {
+	color: var(--secondary-color);
+}
+
+.search__alert-msg {
+	color: var(--primary-color);
+	font-size: .75rem;
+	padding-left: .625em;
+	align-self: flex-start;
+}
+
+.search__buttons { 
+	gap: .5em;
+}
+
+.search_btn {
+	cursor: pointer;
+	border: solid .25em var(--secondary-color);
+	padding: .5em;
+	border-radius: 1em;
+	transition: all .1s;
+	background-color: var(--secondary-color);
+	color: var(--base-color);
+}
+
+.search_btn img {
+	width: 1.625rem;
+	aspect-ratio: 1/1;
+}
+
+.search_btn:hover {
+	background-color: var(--primary-color);
+	color: var(--base-color);
+	border-color: var(--primary-color);
+	box-shadow: 0 .125em .25em var(--secondary-color);
+}
+
+/* PRODUCTS LIST */
+.products__container {
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: .625em;
+	overflow-y: auto;
+}
+
+.product__card {
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .75em;
+	width: 15.625rem;
+	height: 20rem;
+	padding: .75em;
+	border-radius: .25em;
+	background-color: var(--primary-color);
+	font-family: var(--text-font);
+	color: var(--base-color);
+	box-shadow: .0625em 0625em .25em var(--secondary-color);
+}
+
+.product__card--img-container {
+	height: 12.5rem;
+	overflow: hidden;
+}
+
+.product__card--img {
+	width: 100%;
+	aspect-ratio: 1/1;
+	object-position: center;
+	object-fit: cover; 
+}
+
+.product__card:hover .product__card--img {
+	filter: grayscale();
+	transform: scale(1.2);
+}
+
+.product__card--info {
+	width: 100%;
+}
+
+.product__card--details {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product__card--name {
+	font-weight: 400;
+	text-transform: capitalize;
+	margin-bottom: .5em;
+	font-size: 1rem;
+}
+
+.product__card--price {
+	font-weight: 700;
+}
+
+.product__card--trash-icon {
+	cursor: pointer;
+}
+
+/* ========================= FORM - ADD PRODUCT ========================= */
+.form__container {
+	flex-direction: column;
+	gap: 1.25em;
+}
+
+.form__container input {
+	font-family: var(--text-font);
+}
+
+.form__container input[type=text] {
+	font-weight: 600;
+	color: var(--secondary-color);
+	border: .25em solid var(--secondary-color);
+	border-radius: 1.875em;
+	padding: .75em .625em;
+	width: 90%;
+}
+
+.form__container input[type=text]::placeholder {
+	color: var(--secondary-color);
+}
+
+.form__container input[type=text]:required:invalid {
+	border-bottom: .25em solid var(--failure-color);
+}
+
+.form__container input[type=text]:valid {
+	border-bottom: .25em solid var(--success-color);
+}
+
+.form__buttons {
+	flex-wrap: wrap;
+	gap: .75em;
+}
+
+.form__buttons input {
+	font-weight: 500;
+	font-size: 1.25rem;
+	cursor: pointer;
+	border: solid .125em var(--secondary-color);
+	width: 9.375rem;
+	padding: .625em;
+	border-radius: 1em;
+	transition: all .1s;
+}
+
+.form__buttons input[type=submit] {
+	background-color: var(--secondary-color);
+	color: var(--base-color);
+}
+
+.form__buttons input[type=reset] {
+	background-color: var(--base-color);
+	color: var(--secondary-color);
+}
+
+.form__buttons input:hover {
+	background-color: var(--primary-color);
+	color: var(--base-color);
+	border-color: var(--primary-color);
+	box-shadow: 0 .125em .25em var(--secondary-color);
+}
+
+/* ========================= FOOTER ========================= */
+.footer-container {
+	justify-content: space-around;
+	gap: 1.25em;
+	min-height: 11.25rem;
+	color: var(--base-color);
+	padding: .625em;
+	text-align: center;
+}
+
+.footer-container li {
+	list-style: none;
+}
+
+.footer-container a {
+	color: var(--base-color);
+}
+
+.footer__author--content {
+	text-transform: uppercase;
+	font-family: var(--text-font);
+}
+
+.footer__content--muted, 
+.footer__credits {
+	font-weight: 200;
+}
+
+.footer__author--socials li {
+	margin-top: 1.25em;
+	display: inline-block;
+}
+
+.footer__author--socials a {
+	text-decoration: none;
+	background-color: var(--secondary-color);
+	padding: .625em .5em;
+	border-radius: .625em;
+}
+
+.footer__credits--links {
+	font-family: var(--text-font);
+}
+
+/* ========================= MEDIAS ========================= */
+@media (max-width: 678px) {
+	.main-container {
+		flex-direction: column-reverse;
+		align-items: center;
+		padding: 1.25em 1.25em 2.5em;
+		gap: 1.5em;
+	}
+
+	.products__section {
+		max-width: initial;
+	}
+
+	.search__bar {
+		width: 95%;
+	}
+
+	.search_btn img {
+		width: 1.5rem;
+	}
+
+	.products__container {
+		height: 75vh;
+	}
+
+	.footer-container {
+		flex-direction: column;
+		gap: 1.875em;
+	}
+}
